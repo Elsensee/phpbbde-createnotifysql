@@ -23,7 +23,7 @@ function createSql() {
 			sql += 'INSERT INTO ' + prefix + 'forums_watch (user_id, forum_id, notify_status) VALUES (' + user + ', ' + forum + ', 0);\n';
 		}
 	}
-	document.getElementById('sql').value = '';
+	document.getElementById('sql').value = sql;
 }
 	</script>
 </head>
