@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Notify all users in phpBB 3.1 with SQL</title>
+	<title>Notify all users in phpBB 3.x per SQL</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="global.css" type="text/css" />
 	<script type="text/javascript">
 function createSql() {
 	var prefix = document.getElementById('prefix').value;
 	var users = document.getElementById('users').value;
+	users += 48;
 	var forums = document.getElementById('forums').value;
 	if (prefix == '' || users == '' || forums == '')
 	{
@@ -16,11 +17,9 @@ function createSql() {
 	}
 	
 	var sql = '';
-	for (i=1; i<=forums; i++) {
-		for (j=0; j<users; j++){
-			var user = j+48;
-			var forum = i;
-			sql += 'INSERT INTO ' + prefix + 'forums_watch (user_id, forum_id, notify_status) VALUES (' + user + ', ' + forum + ', 0);\n';
+	for (i = 1; i <= forums; i++) {
+		for (j = 48; j < users; j++){
+			sql += 'INSERT INTO ' + prefix + 'forums_watch (user_id, forum_id, notify_status) VALUES (' + j + ', ' + i + ', 0);\n';
 		}
 	}
 	document.getElementById('sql').value = sql;
@@ -30,7 +29,7 @@ function createSql() {
 <body>
 <div style="width:1060px;margin:0px auto;">
 	<fieldset style="border: 1px solid #8da4b7;margin-top: 20px;padding: 0px;">
-		<legend style="color: #164369;margin: 0 10px;padding: 0 4px;"><b>Notify all users in phpBB 3.1 with SQL</b></legend>
+		<legend style="color: #164369;margin: 0 10px;padding: 0 4px;"><b>Notify all users in phpBB 3.x per SQL</b></legend>
 		<div style="padding: 10px;">
 			<div class="main">
 				<div style="float:left;padding-top: 4px;width:65px;">Prefix</div>
@@ -44,6 +43,7 @@ function createSql() {
 			</div>
 		</div>
 	</fieldset>
+	<div class="copyright"><a href="https://github.com/Elsensee/phpbbde-createnotifysql" target="_blank">Source</a></div>
 </div>
 </body>
 </html>
