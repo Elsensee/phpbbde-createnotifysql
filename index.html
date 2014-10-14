@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Notify all users in phpBB 3.x per SQL</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="global.css" type="text/css" />
-	<script type="text/javascript">
+<title>Notify all users in phpBB 3.x per SQL</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="global.css" type="text/css" />
+<script type="text/javascript">
 function createSql()
 {
 	var prefix = document.getElementById('prefix').value;
@@ -15,7 +15,7 @@ function createSql()
 		document.getElementById('sql').value = '';
 		return;
 	}
-	user += 48;
+	users += 48;
 	
 	var sql = '';
 	for (i = 1; i <= forums; i++)
@@ -27,31 +27,26 @@ function createSql()
 	}
 	document.getElementById('sql').value = sql;
 }
-	</script>
-<style type="text/css">
-.input-element {
-	width: 50px;
-}
-</style>
+</script>
 </head>
 <body>
-<div style="width: 1060px; margin: 0px auto;">
-	<fieldset style="border: 1px solid #8da4b7; margin-top: 20px; padding: 0px;">
-		<legend style="color: #164369; margin: 0 10px; padding: 0 4px;"><b>Notify all users in phpBB 3.x per SQL</b></legend>
+<div style="width: 700px; margin: 20px;">
+	<fieldset style="border: 1px solid #8da4b7; margin-top: 20px;">
+		<legend style="color: #164369; margin: 0 10px; padding: 0 5px;"><b>Notify all users in phpBB 3.x per SQL</b></legend>
 		<div style="padding: 10px;">
-			<div class="main">
-				<div style="float:left;padding-top: 4px;width:65px;">Prefix</div>
-				<div><input class="input-element" type="text" id="prefix" onKeyUp="createSql()" value="phpbb_" /></div>
-				<div style="float:left;padding-top: 4px;width:65px;">Users</div>
-				<div><input class="input-element" type="number" id="users" onKeyUp="createSql()" /></div>
-				<div style="float:left;padding-top: 4px;width:65px;">Forums</div>
-				<div><input class="input-element" type="number" id="forums" onKeyUp="createSql()" /></div>
-				<div style="float:left;padding-top: 4px;width:65px;">SQL</div>
-				<div><textarea id="sql" name="sql" cols="80" rows="30" onClick="this.select(); this.focus();"></textarea></div>
+			<div>
+				<div class="label">Prefix</div>
+				<div><input type="text" id="prefix" onKeyUp="createSql()" value="phpbb_" /></div>
+				<div class="label">Users</div>
+				<div><input type="number" id="users" onKeyUp="createSql()" /></div>
+				<div class="label">Forums</div>
+				<div><input type="number" id="forums" onKeyUp="createSql()" /></div>
+				<div class="label">SQL</div>
+				<div><textarea id="sql" name="sql" cols="80" rows="20" onClick="this.select(); this.focus();"></textarea></div>
 			</div>
 		</div>
 	</fieldset>
-	<div class="copyright"><a href="https://github.com/Elsensee/phpbbde-createnotifysql">Source</a></div>
+	<div class="sig"><a href="https://github.com/Elsensee/phpbbde-createnotifysql">Source</a>&nbsp;–&nbsp;<a href="https://github.com/Elsensee/phpbbde-createnotifysql/archive/gh-pages.zip">Download</a></div>
 </div>
 </body>
 </html>

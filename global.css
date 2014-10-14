@@ -20,60 +20,29 @@ body {
 	font-size: 12px;
 }
 
-input,select {
+input {
+	width: 125px;
+}
+
+input, textarea {
 	background-color: #fafafa;
 	border: 1px solid #8da4b7;
 	padding: 2px;
-	margin: 2px; 0px;
+	margin: 2px;
 }
 
-input:focus,select:focus {
+input:focus {
 	background-color: #fff9f4;
 	border: 1px solid #fa2;
 }
 
-img {
-	border: none;
+.label {
+	float: left;
+	padding-top: 4px;
+	width: 65px;
 }
 
-.copyright,.signatur {
+.sig {
 	color: #164369;
 	font-size: 11px;
-}
-
-.navigation {
-	float: left;
-	width: 230px;
-}
-
-.main {
-	
-}
-
-.spalte_leer {
-	display: block;
-	float: left;
-	text-align: center;
-	width: 40px;
-}
-
-.spalten {
-	height: 24px;
-}
-
-.spalten a {
-	display: block;
-	float: left;
-	text-align: center;
-	width: 40px;
-}
-
-.zeilen a {
-	height: 40px;
-	line-height: 40px;
-}
-
-.zeilen_leer {
-     height: 40px;
-     line-height: 40px;
 }
