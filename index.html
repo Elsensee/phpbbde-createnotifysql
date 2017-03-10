@@ -15,7 +15,7 @@ function createSql()
 		document.getElementById('sql').value = '';
 		return;
 	}
-	users += 48;
+	users = -(-users) + 48;
 	
 	var sql = '';
 	for (i = 1; i <= forums; i++)
